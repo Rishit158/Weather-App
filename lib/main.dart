@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_and_signup/pallete.dart';
 import 'package:login_and_signup/providers/user_provider.dart';
 import 'package:login_and_signup/screens/home_screen.dart';
 import 'package:login_and_signup/screens/signup_screen.dart';
@@ -35,13 +36,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Node Auth',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      debugShowCheckedModeBanner: false,
+      title: 'Weather App',
+      theme: ThemeData.dark(
+        useMaterial3: true,
       ),
       home: Provider.of<UserProvider>(context).user.token.isEmpty
           ? const SignupScreen()
-          : const HomeScreen(),
+          : HomeScreen(),
     );
   }
 }
+
+//  Provider.of<UserProvider>(context).user.token.isEmpty
+//           ? const SignupScreen()
+//           : HomeScreen(),

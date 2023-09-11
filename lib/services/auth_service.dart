@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:login_and_signup/models/user.dart';
 import 'package:login_and_signup/providers/user_provider.dart';
 import 'package:login_and_signup/screens/home_screen.dart';
+import 'package:login_and_signup/screens/login_screen.dart';
 import 'package:login_and_signup/screens/signup_screen.dart';
 import 'package:login_and_signup/utils/constants.dart';
 import 'package:login_and_signup/utils/utils.dart';
@@ -77,7 +78,7 @@ class AuthService {
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
           navigator.pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => HomeScreen(),
             ),
             (route) => false,
           );
@@ -133,7 +134,7 @@ class AuthService {
     prefs.setString('x-auth-token', '');
     navigator.pushAndRemoveUntil(
       MaterialPageRoute(
-        builder: (context) => const SignupScreen(),
+        builder: (context) => const LoginScreen(),
       ),
       (route) => false,
     );

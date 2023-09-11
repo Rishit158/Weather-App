@@ -16,7 +16,7 @@ authRouter.post("/api/signup", async (req, res) => {
         .status(400)
         .json({ msg: "User with same email already exists!" });
     }
-    //
+
     const hashedPassword = await bcryptjs.hash(password, 8);
 
     let user = new User({
@@ -51,6 +51,7 @@ authRouter.post("/api/signin", async (req, res) => {
 
     const token = jwt.sign({ id: user._id }, "passwordKey");
     res.json({ token, ...user._doc });
+    // ...user._doc this because otherwise it would send a load of data but by doing this it will send the requried data
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
