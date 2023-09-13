@@ -32,3 +32,5 @@ A Weather App with login and signup functionality.
 ## Tech Used
 * **Server**:  Node.js, Express, Mongoose, MongoDB
 * **Client**: Flutter, Provider
+## Feedback
+If you have any feedback, please reach out to me at raj.rishit3000@gmail.com
