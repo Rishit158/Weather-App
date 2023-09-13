@@ -1,48 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:login_and_signup/providers/user_provider.dart';
-// import 'package:login_and_signup/services/auth_service.dart';
-// import 'package:provider/provider.dart';
-
-// class HomeScreen extends StatelessWidget {
-//   const HomeScreen({Key? key}) : super(key: key);
-
-//   void signOutUser(BuildContext context) {
-//     AuthService().signOut(context);
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final user = Provider.of<UserProvider>(context).user;
-
-//     return Scaffold(
-//       body: Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Text(user.id),
-//           Text(user.email),
-//           Text(user.name),
-//           ElevatedButton(
-//             onPressed: () => signOutUser(context),
-//             style: ButtonStyle(
-//               backgroundColor: MaterialStateProperty.all(Colors.blue),
-//               textStyle: MaterialStateProperty.all(
-//                 const TextStyle(color: Colors.white),
-//               ),
-//               minimumSize: MaterialStateProperty.all(
-//                 Size(MediaQuery.of(context).size.width / 2.5, 50),
-//               ),
-//             ),
-//             child: const Text(
-//               "Sign Out",
-//               style: TextStyle(color: Colors.white, fontSize: 16),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 import 'dart:convert';
 
 import 'dart:ui';
@@ -69,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final cityController = TextEditingController();
+
   String cityName = 'Hyderabad';
   // String cityName = cityController.text;
 
@@ -95,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // String cityName = await cityController.text;
 
       String cityName = await cityController.text;
+
       if (cityController.text == '') {
         cityName = 'Hyderabad';
       }
@@ -306,10 +263,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 // ),
 
                 SizedBox(
-                  height: 120,
+                  height: 130,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 5,
+                      itemCount: 6,
                       itemBuilder: (context, index) {
                         final hourlyForecast = data['list'][index + 1];
                         final time = DateTime.parse(hourlyForecast['dt_txt']);
