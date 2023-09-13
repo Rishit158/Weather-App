@@ -1,16 +1,34 @@
-# login_and_signup
+# Weather App
 
-A new Flutter project.
+A Weather App with login and signup functionality.
 
-## Getting Started
+## Features
+* Email and Password Authentication
+* Persisting Auth state
+* Searching different places
+* Giving realtime weather data
+* Sign Out
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running Locally
+ After cloning this repository, migrate to `login_and_signup` folder. Then, follow the following steps:
+* Create MongoDB Project & Cluster
+* Click on Connect, follow the process where you will get the uri.- Replace the MongoDB uri with yours in `server/index.js`.
+* Head to `lib\utils\constants.dart file`, replace with your IP Address.
+  Then run the following commands to run your app:
+### Server Side
+```
+  cd server
+  npm install
+  npm run dev (for continuous development)
+  OR
+  npm start (to run script 1 time)
+```
+### Client Side
+```
+  flutter pub get
+  open -a simulator (to get iOS Simulator)
+  flutter run
+```
+## Tech Used
+* **Server**:  Node.js, Express, Mongoose, MongoDB
+* **Client**: Flutter, Provider
